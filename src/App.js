@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles.scss';
+import Board from './Components/Board';
+// import { useState } from 'react';
 
 function App() {
+  // const [values,setValues] = useState(0);
+
+  // const onBtnCall =(e)=>{
+  //   setValues(e.target.value);
+  // }
+
+  // console.log(values);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {/* <button onClick={onBtnCall}>Click here</button> */}
+      <Board />
     </div>
   );
 }

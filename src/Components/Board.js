@@ -6,17 +6,24 @@ const Board = () => {
 
     const [squares, setSquare] = useState(Array(9).fill(null));
 
-    console.log(squares)
+    const [isXnext, setIsXNext] = useState(false);
 
     const handleSquareClicked = (clickedPosition) => {
+
+        if (squares[clickedPosition]) {
+            return;
+        }
+
         setSquare((currentSquare) => {
             return currentSquare.map((squareValue, position) => {
                 if (clickedPosition === position) {
-                    return 'X';
+                    return isXnext?'X' : '0';
                 }
                 return squareValue;
             })
-        })
+        });
+
+        setIsXNext((currentIsnext)=> !currentIsnext);
     }
 
     const renderSquares = (position) => {
